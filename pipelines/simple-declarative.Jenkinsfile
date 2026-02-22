@@ -1,5 +1,11 @@
 pipeline {
     agent any 
+
+    triggers {
+        // At 22:00 on every day-of-week from Monday through Friday.
+        cron('0 22 * * 1-5')
+    }
+    
     stages {
         stage ('SCM') {
             steps {
