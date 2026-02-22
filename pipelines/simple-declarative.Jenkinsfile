@@ -1,6 +1,10 @@
 pipeline {
     agent any 
 
+    parameters {
+        string("name : 'branch', defaultValue : 'main', description : 'The branch to fetch for the pipeline'")
+    }
+
     triggers {
         // At 22:00 on every day-of-week from Monday through Friday.
         cron('0 22 * * 1-5')
