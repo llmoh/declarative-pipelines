@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage ('SCM') {
             steps {
-                git branch: 'main', url: 'https://github.com/llmoh/declarative-pipelines.git'
+                git branch: "${params.branch}", url: 'https://github.com/llmoh/declarative-pipelines.git'
             }
         }
         stage('build') {
